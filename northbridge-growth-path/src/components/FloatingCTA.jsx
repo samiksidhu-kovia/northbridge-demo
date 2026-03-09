@@ -178,8 +178,10 @@ export default function FloatingCTA() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
               <a
-                href="#booking"
-                onClick={(e) => { closeModal(); handleSmoothScroll(e); }}
+                href="https://calendly.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeModal}
                 style={{
                   background: "var(--navy)",
                   color: "var(--accent)",
