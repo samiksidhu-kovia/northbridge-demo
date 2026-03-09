@@ -6,6 +6,7 @@ import CaseStudySection from "../components/sections/CaseStudySection";
 import TestimonialsSection from "../components/sections/TestimonialsSection";
 import LeadCaptureSection from "../components/sections/LeadCaptureSection";
 import FooterSection from "../components/sections/FooterSection";
+import FloatingCTA from "../components/FloatingCTA";
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
       <TestimonialsSection />
       <LeadCaptureSection />
       <FooterSection />
+      <FloatingCTA />
     </div>
   );
 }

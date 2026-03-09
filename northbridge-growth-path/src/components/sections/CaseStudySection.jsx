@@ -10,6 +10,18 @@ function useVisible(ref) {
   return visible;
 }
 
+const handleSmoothScroll = (e) => {
+  const href = e.currentTarget.getAttribute("href");
+  if (href && href.startsWith("#")) {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      const targetPos = target.getBoundingClientRect().top + window.scrollY - 120;
+      window.scrollTo({ top: targetPos, behavior: "smooth" });
+    }
+  }
+};
+
 export default function CaseStudySection() {
   const ref = useRef(null);
   const visible = useVisible(ref);
@@ -111,6 +123,7 @@ export default function CaseStudySection() {
                 </p>
                 <a
                   href="#lead-capture"
+                  onClick={handleSmoothScroll}
                   style={{
                     fontSize: 15,
                     fontWeight: 600,

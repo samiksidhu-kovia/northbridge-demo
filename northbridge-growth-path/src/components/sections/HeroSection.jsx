@@ -1,5 +1,17 @@
 import { TrendingUp, Zap, Globe } from "lucide-react";
 
+const handleSmoothScroll = (e) => {
+  const href = e.currentTarget.getAttribute("href");
+  if (href && href.startsWith("#")) {
+    e.preventDefault();
+    const target = document.querySelector(href);
+    if (target) {
+      const targetPos = target.getBoundingClientRect().top + window.scrollY - 120;
+      window.scrollTo({ top: targetPos, behavior: "smooth" });
+    }
+  }
+};
+
 export default function HeroSection() {
   return (
     <section
@@ -77,10 +89,10 @@ export default function HeroSection() {
 
             {/* CTAs */}
             <div style={{ display: "flex", gap: 14, flexWrap: "wrap", marginBottom: 44 }}>
-              <a href="#lead-capture" className="btn-primary">
+              <a href="#lead-capture" onClick={handleSmoothScroll} className="btn-primary">
                 Book a Strategy Call
               </a>
-              <a href="#problem" className="btn-outline">
+              <a href="#problem" onClick={handleSmoothScroll} className="btn-outline">
                 See How We Work
               </a>
             </div>
